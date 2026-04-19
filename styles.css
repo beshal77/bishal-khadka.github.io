@@ -626,6 +626,13 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
 }
 
+.company-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
 .current-badge {
   background: rgba(11, 244, 200, 0.1);
   color: var(--primary);
