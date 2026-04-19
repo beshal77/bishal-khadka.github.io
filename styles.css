@@ -361,13 +361,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .subtitle-container {
-  height: 40px;
+  height: 48px;
   position: relative;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 1.5rem;
-  color: var(--secondary);
-  text-shadow: 0 0 10px var(--secondary-glow);
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .subtitle {
@@ -376,12 +376,28 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
 }
 
 .subtitle.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.role-1 {
+  color: var(--primary);
+  text-shadow: 0 0 15px var(--primary-glow);
+}
+
+.role-2 {
+  color: #a855f7;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.role-3 {
+  color: var(--secondary);
+  text-shadow: 0 0 15px var(--secondary-glow);
 }
 
 .tagline {
