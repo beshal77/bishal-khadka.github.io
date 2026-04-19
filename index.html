@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishal Khadka | Portfolio</title>
+    <meta name="description" content="Portfolio of Bishal Khadka, Full Stack Developer and System Administrator.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Three.js Canvas Container -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-content">
+            <a href="#hero" class="logo">BK</a>
+            
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 id="hero-title">
+                    <span class="title-word">BISHAL</span> 
+                    <span class="title-word">KHADKA</span>
+                </h1>
+                <div class="subtitle-container">
+                    <span class="subtitle active">Full Stack Developer</span>
+                    <span class="subtitle">Tech Support Specialist</span>
+                    <span class="subtitle">System Administrator</span>
+                </div>
+                <p class="tagline">Crafting Digital Solutions with Precision & Innovation</p>
+                <div class="cta-buttons">
+                    <a href="#experience" class="btn primary-btn">Explore My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="assets/images/profile.jpeg" alt="Bishal Khadka" id="profileImage" class="profile-img">
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="about-card scroll-animate fade-left">
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <p><strong>BCA Student</strong></p>
+                    <p>Himalayan College for Learning and Excellence</p>
+                </div>
+                
+                <div class="about-card scroll-animate fade-up">
+                    <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>Rampur, Udaypur</p>
+                    <p>Belakha Municipality, Ward No. 3, Nayatole, Nepal</p>
+                </div>
+                
+                <div class="about-card scroll-animate fade-right">
+                    <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Current Role</h3>
+                    <p><strong>System Administrator</strong></p>
+                    <p>MSM VIDEO</p>
+                </div>
+            </div>
+            
+            <div class="bio-section scroll-animate fade-up">
+                <h3>My Journey</h3>
+                <p>
+                    I am a passionate tech professional with a diverse background ranging from Level 2 Technical Support to System Administration and Full Stack Development. My journey from resolving advanced network connectivity issues at Dishhome Fibernet to managing robust server infrastructures at MSM VIDEO has equipped me with a unqiue perspective on system architecture and user experience. Currently pursuing my Bachelor of Computer Applications, I am dedicated to learning cutting-edge technologies and continuously evolving my developer toolset to create innovative digital solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item scroll-animate slide-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>System Administrator</h3>
+                        <h4>MSM VIDEO <span class="current-badge">Current</span></h4>
+                        <ul>
+                            <li>Managing server infrastructure and system operations</li>
+                            <li>Administering user accounts and security protocols</li>
+                            <li>Ensuring system uptime and performance optimization</li>
+                            <li>Implementing automated backup and recovery solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item scroll-animate slide-in-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>L2 Technical Support Specialist</h3>
+                        <h4>Dishhome Fibernet</h4>
+                        <ul>
+                            <li>Provided advanced technical support to customers</li>
+                            <li>Troubleshot network connectivity issues</li>
+                            <li>Managed tickets and resolved escalated issues</li>
+                            <li>Trained junior support staff and created documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item scroll-animate slide-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>BCA Student & Developer</h3>
+                        <h4>Himalayan College <span class="current-badge">Ongoing</span></h4>
+                        <ul>
+                            <li>Studying advanced computer science principles</li>
+                            <li>Developing full-stack web applications</li>
+                            <li>Learning cutting-edge technologies and frameworks</li>
+                            <li>Building portfolio projects and real-world solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category scroll-animate fade-up">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <div class="skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category scroll-animate fade-up" style="transition-delay: 100ms;">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend & Databases</h3>
+                    <div class="skill-tags">
+                        <span>MongoDB</span>
+                        <span>MySQL</span>
+                        <span>Express</span>
+                        <span>REST APIs</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category scroll-animate fade-up" style="transition-delay: 200ms;">
+                    <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>System & Network</h3>
+                    <div class="skill-tags">
+                        <span>Linux/Ubuntu</span>
+                        <span>Windows Server</span>
+                        <span>Network Troubleshooting</span>
+                        <span>Firewall Management</span>
+                        <span>System Admin</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category scroll-animate fade-up" style="transition-delay: 300ms;">
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span>Git/GitHub</span>
+                        <span>Docker</span>
+                        <span>Linux CLI</span>
+                        <span>SSH Management</span>
+                        <span>AWS Basics</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category scroll-animate fade-up" style="transition-delay: 400ms;">
+                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span>Problem Solving</span>
+                        <span>Communication</span>
+                        <span>Team Collaboration</span>
+                        <span>Documentation</span>
+                        <span>Customer Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-content">
+                <div class="contact-cards">
+                    <div class="contact-card scroll-animate fade-right">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Email</h3>
+                        <a href="mailto:bishalwork10@gmail.com">bishalwork10@gmail.com</a>
+                    </div>
+                    
+                    <div class="contact-card scroll-animate fade-right" style="transition-delay: 100ms;">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Address</h3>
+                        <p>Rampur, Udaypur, Belakha Municipality, Ward No. 3, Nepal</p>
+                    </div>
+                    
+                    <div class="contact-card scroll-animate fade-right" style="transition-delay: 200ms;">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h3>Connect</h3>
+                        <p>Let's collaborate on projects</p>
+                    </div>
+
+                    <div class="social-links scroll-animate fade-up">
+                        <a href="https://www.facebook.com/bishal.khadka.228565" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bishal-khadka-50a784239/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/bishalkhadka107?igsh=OWh2amQ4b2N6aXk4" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container scroll-animate fade-left">
+                    <form id="contactForm" action="https://formsubmit.co/bishalwork10@gmail.com" method="POST">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        
+                        <!-- Hidden fields for FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Portfolio Contact!">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <button type="submit" class="btn primary-btn submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+
+                        <div id="form-messages"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">BK.</div>
+            <p>&copy; 2024 Bishal Khadka. Crafted with <i class="fas fa-heart" style="color: var(--secondary)"></i> | Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Three.js (cdn) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
