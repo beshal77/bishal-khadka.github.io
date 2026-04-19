@@ -611,9 +611,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-content h3 {
-  font-size: 1.5rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: 0 0 30px rgba(11, 244, 200, 0.1);
+  transition: transform var(--transition-normal), text-shadow var(--transition-normal);
+}
+
+.timeline-content:hover h3 {
+  transform: translateX(10px);
+  text-shadow: 0 0 15px var(--primary-glow);
 }
 
 .timeline-content h4 {
