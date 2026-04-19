@@ -473,23 +473,80 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bio-section {
-  background: var(--bg-card);
+  background: linear-gradient(135deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.9) 100%);
   border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--primary);
   border-radius: var(--border-radius);
-  padding: 3rem;
-  backdrop-filter: blur(5px);
+  padding: 3.5rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.bio-section::before {
+  content: '\f10d'; /* FontAwesome quote-left */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+}
+
+.bio-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bio-icon {
+  font-size: 2rem;
+  color: var(--secondary);
+  background: rgba(255, 0, 127, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--secondary-glow);
 }
 
 .bio-section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
   color: var(--primary);
 }
 
-.bio-section p {
+.bio-content {
+  position: relative;
+  z-index: 1;
+}
+
+.bio-content p {
   color: var(--text-muted);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.bio-content p:last-child {
+  margin-bottom: 0;
+}
+
+.lead-text {
+  font-size: 1.25rem !important;
+  color: var(--text-main) !important;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: 600;
+  text-shadow: 0 0 5px var(--primary-glow);
 }
 
 /* =========================================
