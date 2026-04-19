@@ -503,6 +503,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   animation: cuteRobotWiggle 3s infinite ease-in-out;
   transform-origin: bottom center;
+  mix-blend-mode: screen;
 }
 
 @keyframes cuteRobotWiggle {
