@@ -1091,10 +1091,21 @@ h1, h2, h3, h4, h5, h6 {
    Footer
 ========================================= */
 footer {
-  background: var(--bg-lighter);
+  background: var(--bg-color);
   border-top: 1px solid var(--glass-border);
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  animation: scanline 4s linear infinite;
 }
 
 .footer-content {
@@ -1104,19 +1115,58 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-logo {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
-  color: var(--text-muted);
+  background: linear-gradient(to right, var(--text-main), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.footer-logo::after {
+  content: 'BK.';
+  position: absolute;
+  left: 0; top: 0;
+  background: transparent;
+  text-shadow: 0 0 15px var(--primary-glow);
+  z-index: -1;
+  opacity: 0.5;
+  -webkit-text-fill-color: var(--text-main);
 }
 
 .footer-content p {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+.footer-content .fa-heart {
+  display: inline-block;
+  animation: heartBeat 1.5s infinite;
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.3); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.3); }
+  60% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); width: 100%; }
+  100% { transform: translateX(100%); width: 100%; }
 }
 
 /* =========================================
