@@ -469,6 +469,50 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 30px var(--primary-glow);
 }
 
+.robot-back {
+  background: radial-gradient(circle, rgba(11, 244, 200, 0.2) 0%, rgba(0, 0, 0, 0.8) 70%);
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 20px var(--primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.robot-back::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(11, 244, 200, 0.1) 3px,
+    rgba(11, 244, 200, 0.1) 3px
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.robot-img {
+  width: 260px;
+  height: 260px;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
+  animation: floatRobot 4s infinite ease-in-out;
+}
+
+@keyframes floatRobot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
