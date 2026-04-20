@@ -383,7 +383,7 @@
                                 <a href="https://github.com/beshal77" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4628c9759?q=80&w=800&auto=format&fit=crop"
+                        <img src="assets/images/projects/cloud_stream.png"
                             alt="Cloud Stream Engine" class="project-img">
                     </div>
                     <div class="project-info">
@@ -409,7 +409,7 @@
                                 <a href="https://github.com/beshal77" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop"
+                        <img src="assets/images/projects/netpulse_monitor.png"
                             alt="NetPulse Monitor" class="project-img">
                     </div>
                     <div class="project-info">
@@ -435,7 +435,7 @@
                                 <a href="https://github.com/beshal77" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop"
+                        <img src="assets/images/projects/neural_portfolio.png"
                             alt="Cyber Portfolio" class="project-img">
                     </div>
                     <div class="project-info">
@@ -481,13 +481,13 @@
                 </div>
                 <!-- Actual gallery images (blurred by default) -->
                 <div class="gallery-grid" id="actualGallery">
-                    <img src="assets/images/gallery/photo1.jpg" alt="Gallery Photo 1" class="gallery-img blur-img">
-                    <img src="assets/images/gallery/photo2.jpg" alt="Gallery Photo 2" class="gallery-img blur-img">
-                    <img src="assets/images/gallery/photo3.jpg" alt="Gallery Photo 3" class="gallery-img blur-img">
-                    <img src="assets/images/gallery/photo4.jpg" alt="Gallery Photo 4" class="gallery-img blur-img">
-                    <img src="assets/images/gallery/photo5.jpg" alt="Gallery Photo 5" class="gallery-img blur-img">
-                    <img src="assets/images/gallery/photo6.jpg" alt="Gallery Photo 6" class="gallery-img blur-img">
-                    <img src="assets/images/gallery/photo7.jpg" alt="Gallery Photo 7" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo1.jpg" alt="Developer Workspace" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo2.jpg" alt="Nepal Himalayas" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo3.jpg" alt="Data Center" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo4.jpg" alt="Modern Desk Setup" class="gallery-img blur-img">
+                    <!-- Duplicate or add more as needed -->
+                    <img src="assets/images/gallery/photo1.jpg" alt="Developer Workspace" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo2.jpg" alt="Nepal Himalayas" class="gallery-img blur-img">
                 </div>
             </div> <!-- Important: Added missing closing div for locked-gallery-container -->
         </div>
@@ -609,11 +609,144 @@
         </div>
     </footer>
 
-    <!-- Three.js (cdn) -->
+    <!-- Fullscreen Lightbox -->
+    <div id="lightbox" class="lightbox-overlay">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full Screen Image">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Hidden Premium CV Template (For PDF Generation) -->
+    <div id="premium-cv-template" style="display: none; position: absolute; left: -9999px;">
+        <!-- Page 1: The Gift Cover -->
+        <div class="pdf-page gift-cover" style="width: 210mm; height: 297mm; background: #050505; color: #fff; padding: 40mm; position: relative; font-family: 'Outfit', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 1px solid rgba(11, 244, 200, 0.3);">
+            <div class="gift-glow" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(11, 244, 200, 0.15) 0%, transparent 70%);"></div>
+            
+            <div class="gift-icon" style="font-size: 60px; margin-bottom: 2rem; color: #0bf4c8;">🎁</div>
+            
+            <h1 style="font-size: 32px; letter-spacing: 2px; margin-bottom: 3rem; background: linear-gradient(to right, #fff, #0bf4c8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">BISHAL KHADKA</h1>
+            
+            <div class="quote-container" style="max-width: 80%; margin: 2rem 0;">
+                <p style="font-size: 26px; line-height: 1.6; font-weight: 300; font-style: italic;">
+                    "🚀 Built with passion, powered by skills, and driven by results 💡"
+                </p>
+            </div>
+            
+            <div style="width: 50px; height: 2px; background: #0bf4c8; margin: 3rem 0;"></div>
+            
+            <p style="font-size: 14px; color: #a0a0a0; letter-spacing: 1px; text-transform: uppercase;">Thank you for your interest 🤝</p>
+        </div>
+
+        <!-- Page 2: The actual CV content -->
+        <div class="pdf-page cv-main" style="width: 210mm; height: 297mm; background: #fff; color: #333; padding: 20mm; font-family: 'Inter', sans-serif;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0bf4c8; padding-bottom: 15px; margin-bottom: 30px;">
+                <div>
+                    <h1 style="font-size: 28px; margin: 0; color: #111;">BISHAL KHADKA</h1>
+                    <p style="font-size: 14px; color: #666; margin: 5px 0 0;">Full Stack Developer | System Administrator</p>
+                </div>
+                <div style="text-align: right; font-size: 12px; color: #444;">
+                    <p>bishalwork10@gmail.com</p>
+                    <p>Nepal, Rampur Udaypur</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+                <div>
+                    <h3 style="font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; color: #0bf4c8;">EXPERIENCE</h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="font-size: 14px; margin: 0;">System Administrator</h4>
+                        <p style="font-size: 12px; color: #888; margin: 2px 0 5px;">MSM VIDEO | Present</p>
+                        <p style="font-size: 12px; line-height: 1.5;">Managed cloud infrastructure, DRM systems, and CDN configurations for secure global video streaming.</p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="font-size: 14px; margin: 0;">Technical Support Specialist</h4>
+                        <p style="font-size: 12px; color: #888; margin: 2px 0 5px;">Dishhome Fibernet</p>
+                        <p style="font-size: 12px; line-height: 1.5;">Enterprise network routing, switching, and advanced FTTH troubleshooting.</p>
+                    </div>
+
+                    <h3 style="font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; color: #0bf4c8; margin-top: 30px;">EDUCATION</h3>
+                    <div>
+                        <h4 style="font-size: 14px; margin: 0;">BCA (Bachelor of Computer Applications)</h4>
+                        <p style="font-size: 12px; color: #888; margin: 2px 0 5px;">Ongoing | Himalayan College for Learning</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; color: #0bf4c8;">SKILLS</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 30px;">
+                        <span style="font-size: 10px; background: #f0fdf9; color: #0bf4c8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(11,244,200,0.2);">AWS</span>
+                        <span style="font-size: 10px; background: #f0fdf9; color: #0bf4c8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(11,244,200,0.2);">Linux</span>
+                        <span style="font-size: 10px; background: #f0fdf9; color: #0bf4c8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(11,244,200,0.2);">Node.js</span>
+                        <span style="font-size: 10px; background: #f0fdf9; color: #0bf4c8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(11,244,200,0.2);">React</span>
+                        <span style="font-size: 10px; background: #f0fdf9; color: #0bf4c8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(11,244,200,0.2);">Python</span>
+                        <span style="font-size: 10px; background: #f0fdf9; color: #0bf4c8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(11,244,200,0.2);">Networking</span>
+                    </div>
+
+                    <h3 style="font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px; color: #0bf4c8;">RECOGNITION</h3>
+                    <p style="font-size: 11px; line-height: 1.5; color: #555;">Dedicated to crafting digital solutions with precision and innovative architectures.</p>
+                </div>
+            </div>
+
+            <div style="position: absolute; bottom: 20mm; left: 20mm; right: 20mm; border-top: 1px solid #eee; padding-top: 10px; font-size: 10px; color: #999; text-align: center;">
+                Generated with ❤️ from bishalkhadka.com.np
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Logic (Inline for Cache Busting) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const SECRET_CODE = "981470";
+            const unlockBtn = document.getElementById('unlockBtn');
+            const passcodeInput = document.getElementById('passcodeInput');
+            const passcodeError = document.getElementById('passcodeError');
+            const lockedMsg = document.getElementById('galleryLockedMsg');
+            const actualGallery = document.getElementById('actualGallery');
+
+            function unlock() {
+                if (lockedMsg) lockedMsg.style.display = 'none';
+                if (actualGallery) {
+                    actualGallery.classList.add('unlocked');
+                    actualGallery.querySelectorAll('.gallery-img').forEach(img => {
+                        img.classList.remove('blur-img');
+                        img.style.filter = 'none';
+                        img.style.opacity = '1';
+                    });
+                }
+                localStorage.setItem('galleryAccess', 'true');
+            }
+
+            // Auto-unlock if previously accessed
+            if (localStorage.getItem('galleryAccess') === 'true') {
+                unlock();
+            }
+
+            if (unlockBtn && passcodeInput) {
+                unlockBtn.addEventListener('click', () => {
+                    if (passcodeInput.value.trim() === SECRET_CODE) {
+                        unlock();
+                    } else {
+                        passcodeError.style.display = 'block';
+                        passcodeError.textContent = "Incorrect passcode. Try 981470";
+                        passcodeInput.value = '';
+                    }
+                });
+                passcodeInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') unlockBtn.click();
+                });
+            }
+        });
+    </script>
+
+    <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <!-- Custom Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js?v=1.4"></script>
 </body>
 
 </html>

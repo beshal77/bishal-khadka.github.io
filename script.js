@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSubtitleRotation();
     initScrollProgress();
     initGalleryModal();
+    initCVGift();
 });
 
 /* =========================================
@@ -237,6 +238,62 @@ function initScrollProgress() {
 /* =========================================
    Gallery Modal Logic
  ========================================= */
+/* =========================================
+   CV Download Gift PDF
+ ========================================= */
+/* =========================================
+   Premium CV Download Experience
+ ========================================= */
+function initCVGift() {
+    const downloadBtns = document.querySelectorAll('a[href="assets/resume.pdf"]');
+    
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Check if we should override (we do for the premium experience)
+            e.preventDefault();
+            generatePremiumCV();
+        });
+    });
+
+    async function generatePremiumCV() {
+        const element = document.getElementById('premium-cv-template');
+        if (!element) return;
+
+        // Show a loading state or toast if needed
+        const originalText = "Generating Your Gift...";
+        
+        // Configuration for html2pdf
+        const opt = {
+            margin:       0,
+            filename:     'Bishal_Khadka_Premium_CV.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true, letterRendering: true, backgroundColor: '#050505' },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak:    { mode: 'css', before: '.cv-main' }
+        };
+
+        // Make the template visible briefly for the capture
+        element.style.display = 'block';
+
+        try {
+            // Generate the PDF
+            await html2pdf().set(opt).from(element).save();
+            
+            // Hide it again
+            element.style.display = 'none';
+            
+            // Optional: Show success notification
+        } catch (error) {
+            console.error("PDF Generation failed:", error);
+            element.style.display = 'none';
+            // Fallback: try direct download if file exists
+            window.location.href = 'assets/resume.pdf';
+        }
+    }
+}
+/* =========================================
+   Gallery Logic
+ ========================================= */
 function initGalleryModal() {
     const modal = document.getElementById('accessModal');
     const openBtn = document.getElementById('requestAccessBtn');
@@ -249,61 +306,131 @@ function initGalleryModal() {
     const lockedMsg = document.getElementById('galleryLockedMsg');
     const actualGallery = document.getElementById('actualGallery');
     
-    // Default secret passcode to unlock images 
-    const SECRET_PASSCODE = 'BISHAL2026';
+    // Lightbox Elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    
+    const SECRET_PASSCODE = "981470";
 
-    if (unlockBtn && passcodeInput) {
-        unlockBtn.addEventListener('click', () => {
-            if (passcodeInput.value.trim().toUpperCase() === SECRET_PASSCODE) {
-                // Passcode Successful!
-                passcodeError.style.display = 'none';
-                
-                // Hide lock UI
-                lockedMsg.style.display = 'none';
-                
-                // Unblur images
+    // Debug help - to be removed after confirmation
+    console.log("Gallery system ready. Target code length:", SECRET_PASSCODE.length);
+
+    // Check for existing access
+    if (localStorage.getItem('galleryAccess') === 'true') {
+        unlockGallery(true);
+    }
+
+    function unlockGallery(immediate = false) {
+        if (immediate) {
+            if (lockedMsg) lockedMsg.style.display = 'none';
+            if (actualGallery) {
                 actualGallery.classList.add('unlocked');
                 const images = actualGallery.querySelectorAll('.gallery-img');
                 images.forEach(img => img.classList.remove('blur-img'));
-                
+            }
+            return;
+        }
+
+        // Animated unlock
+        if (typeof gsap !== 'undefined') {
+            gsap.to(lockedMsg, {
+                opacity: 0,
+                y: -50,
+                duration: 0.8,
+                onComplete: () => {
+                    lockedMsg.style.display = 'none';
+                    actualGallery.classList.add('unlocked');
+                    const images = actualGallery.querySelectorAll('.gallery-img');
+                    images.forEach((img, i) => {
+                        gsap.to(img, { filter: 'blur(0px)', opacity: 1, duration: 1, delay: i * 0.1 });
+                        img.classList.remove('blur-img');
+                    });
+                }
+            });
+        } else {
+            lockedMsg.style.display = 'none';
+            actualGallery.classList.add('unlocked');
+            actualGallery.querySelectorAll('.gallery-img').forEach(img => img.classList.remove('blur-img'));
+        }
+        localStorage.setItem('galleryAccess', 'true');
+    }
+
+    if (unlockBtn && passcodeInput) {
+        const handleUnlock = () => {
+            const entered = passcodeInput.value.trim();
+            
+            // Log entry for debugging if it's failing
+            console.log("Attempting unlock with code:", entered);
+
+            if (entered === SECRET_PASSCODE) {
+                console.log("Passcode correct! Unlocking...");
+                passcodeError.style.display = 'none';
+                unlockGallery();
             } else {
-                // Passcode Failed
+                console.warn("Incorrect passcode entered:", entered);
                 passcodeError.style.display = 'block';
+                passcodeError.textContent = "Incorrect passcode. Please try again.";
                 passcodeInput.value = '';
                 
-                // Shake animation for error
-                passcodeInput.parentElement.animate([
-                    { transform: 'translateX(0)' },
-                    { transform: 'translateX(-10px)' },
-                    { transform: 'translateX(10px)' },
-                    { transform: 'translateX(-10px)' },
-                    { transform: 'translateX(10px)' },
-                    { transform: 'translateX(0)' }
-                ], { duration: 400 });
+                // Shake
+                if (typeof gsap !== 'undefined') {
+                    gsap.to(passcodeInput.parentElement, { x: 10, repeat: 5, yoyo: true, duration: 0.05 });
+                }
             }
-        });
-        
-        // Allow pressing Enter in passcode input
+        };
+
+        unlockBtn.addEventListener('click', handleUnlock);
         passcodeInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') unlockBtn.click();
+            if (e.key === 'Enter') handleUnlock();
         });
     }
 
-    if (!modal || !openBtn || !closeBtn) return;
+    // Lightbox Logic
+    if (actualGallery) {
+        actualGallery.addEventListener('click', (e) => {
+            if (e.target.classList.contains('gallery-img') && !e.target.classList.contains('blur-img')) {
+                lightboxImg.src = e.target.src;
+                lightboxCaption.textContent = e.target.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
 
-    // Open modal
-    openBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // prevent background scrolling
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
     });
 
-    // Close modal via button
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeLightbox();
+            if (modal) modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Modal Logic
+    if (!modal || !openBtn || !closeBtn) return;
+
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
     closeBtn.addEventListener('click', () => {
         modal.classList.remove('active');
         document.body.style.overflow = '';
     });
 
-    // Close modal when clicking outside form
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('active');

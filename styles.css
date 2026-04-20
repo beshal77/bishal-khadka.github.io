@@ -1785,11 +1785,74 @@ footer::before {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.cv-fallback {
+/* Fullscreen Lightbox */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 50px var(--primary-glow);
+  transform: scale(0.9);
+  transition: transform var(--transition-normal);
+}
+
+.lightbox-overlay.active #lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-close {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
+  top: 30px;
+  right: 40px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.lightbox-close:hover {
+  color: var(--secondary);
+}
+
+.lightbox-caption {
+  margin-top: 20px;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+/* Enhanced Passcode Input */
+#passcodeInput {
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+#passcodeInput:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Success State for Gallery */
+.gallery-grid.unlocked {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
