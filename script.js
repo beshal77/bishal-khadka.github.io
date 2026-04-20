@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollAnimations();
     initSubtitleRotation();
-    initCustomCursor();
     initScrollProgress();
     initGalleryModal();
 });
@@ -194,49 +193,6 @@ function initSubtitleRotation() {
     }, 3000); // Change text every 3 seconds
 }
 
-/* =========================================
-   Custom Cursor Logic
- ========================================= */
-function initCustomCursor() {
-    const dot = document.querySelector('.cursor-dot');
-    const outline = document.querySelector('.cursor-outline');
-    
-    if (!dot || !outline) return;
-
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Immediate movement for dot
-        dot.style.left = `${posX}px`;
-        dot.style.top = `${posY}px`;
-
-        // Smooth movement for outline
-        outline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    // Hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-category, .about-card');
-    
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            outline.style.borderColor = 'var(--secondary)';
-            dot.style.transform = 'translate(-50%, -50%) scale(0.5)';
-            dot.style.opacity = '0.5';
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            outline.style.transform = 'translate(-50%, -50%) scale(1)';
-            outline.style.borderColor = 'var(--primary)';
-            dot.style.transform = 'translate(-50%, -50%) scale(1)';
-            dot.style.opacity = '1';
-        });
-    });
-}
 
 /* =========================================
    Scroll Progress & Back to Top Logic
