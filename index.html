@@ -470,16 +470,18 @@
                     <h3 id="lockTitleStatus">Private Collection</h3>
                     <p id="lockDescStatus">This section contains personal photos and memories. Access is restricted.</p>
                     
-                    <div id="unlockSection" style="margin-top: 1.5rem;">
-                        <div class="input-group" style="display:flex; max-width:300px; margin: 0 auto 10px;">
-                            <input type="password" id="passcodeInput" placeholder="Enter Passcode..." style="border-radius: 4px 0 0 4px;">
-                            <button id="unlockBtn" class="btn primary-btn" style="border-radius: 0 4px 4px 0; padding: 12px 15px;">Unlock</button>
+                    <div id="unlockSection" style="margin-top: 1.5rem; text-align: center;">
+                        <div style="display:flex; justify-content: center; max-width:320px; margin: 0 auto 10px;">
+                            <input type="password" id="passcodeInput" placeholder="Enter Passcode" style="flex: 1; padding: 12px 15px; border-radius: 4px 0 0 4px; background: rgba(0,0,0,0.6); border: 1px solid var(--glass-border); color: #fff; outline:none;">
+                            <button id="unlockBtn" class="btn primary-btn" style="border-radius: 0 4px 4px 0; padding: 12px 20px; border-left: none;">Unlock</button>
                         </div>
-                        <p id="passcodeError" style="color:#ff007f; font-size:0.8rem; display:none;">Incorrect passcode</p>
-                        <p style="margin-top:20px; font-size:0.9rem;">Don't have a passcode?</p>
-                        <button id="requestAccessBtn" class="btn secondary-btn">
-                            <i class="fas fa-key" style="margin-right: 8px;"></i> Request Access
-                        </button>
+                        <p id="passcodeError" style="color:#ff007f; font-size:0.85rem; display:none; margin-bottom: 10px;">Incorrect passcode</p>
+                        <div style="margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                            <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 10px;">Don't have a passcode?</p>
+                            <button id="requestAccessBtn" class="btn secondary-btn" style="padding: 10px 20px; font-size: 0.85rem;">
+                                <i class="fas fa-key" style="margin-right: 8px;"></i> Request Access
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Actual gallery images (blurred by default) -->
@@ -492,6 +494,7 @@
                     <img src="assets/images/gallery/photo6.jpg" alt="Gallery Photo 6" class="gallery-img blur-img">
                     <img src="assets/images/gallery/photo7.jpg" alt="Gallery Photo 7" class="gallery-img blur-img">
                 </div>
+            </div> <!-- Important: Added missing closing div for locked-gallery-container -->
         </div>
     </section>
 
