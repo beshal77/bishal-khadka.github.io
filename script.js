@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollAnimations();
     initSubtitleRotation();
+    initCustomCursor();
+    initScrollProgress();
+    initGalleryModal();
 });
 
 /* =========================================
@@ -189,4 +192,166 @@ function initSubtitleRotation() {
         
         subtitles[currentIndex].classList.add('active');
     }, 3000); // Change text every 3 seconds
+}
+
+/* =========================================
+   Custom Cursor Logic
+ ========================================= */
+function initCustomCursor() {
+    const dot = document.querySelector('.cursor-dot');
+    const outline = document.querySelector('.cursor-outline');
+    
+    if (!dot || !outline) return;
+
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Immediate movement for dot
+        dot.style.left = `${posX}px`;
+        dot.style.top = `${posY}px`;
+
+        // Smooth movement for outline
+        outline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    // Hover effect for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-category, .about-card');
+    
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            outline.style.borderColor = 'var(--secondary)';
+            dot.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            dot.style.opacity = '0.5';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            outline.style.transform = 'translate(-50%, -50%) scale(1)';
+            outline.style.borderColor = 'var(--primary)';
+            dot.style.transform = 'translate(-50%, -50%) scale(1)';
+            dot.style.opacity = '1';
+        });
+    });
+}
+
+/* =========================================
+   Scroll Progress & Back to Top Logic
+ ========================================= */
+function initScrollProgress() {
+    const progressLine = document.querySelector('.scroll-progress');
+    const backToTop = document.getElementById('back-to-top');
+    
+    if (!progressLine && !backToTop) return;
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        
+        // Progress Bar
+        if (progressLine) {
+            const scrolled = (winScroll / height) * 100;
+            progressLine.style.width = scrolled + "%";
+        }
+
+        // Back to Top Visibility
+        if (backToTop) {
+            if (winScroll > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        }
+    });
+
+    // Scroll to top on click
+    if (backToTop) {
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+/* =========================================
+   Gallery Modal Logic
+ ========================================= */
+function initGalleryModal() {
+    const modal = document.getElementById('accessModal');
+    const openBtn = document.getElementById('requestAccessBtn');
+    const closeBtn = document.querySelector('.close-modal');
+    
+    // Passcode System Elements
+    const unlockBtn = document.getElementById('unlockBtn');
+    const passcodeInput = document.getElementById('passcodeInput');
+    const passcodeError = document.getElementById('passcodeError');
+    const lockedMsg = document.getElementById('galleryLockedMsg');
+    const actualGallery = document.getElementById('actualGallery');
+    
+    // Default secret passcode to unlock images 
+    const SECRET_PASSCODE = 'BISHAL2026';
+
+    if (unlockBtn && passcodeInput) {
+        unlockBtn.addEventListener('click', () => {
+            if (passcodeInput.value.trim().toUpperCase() === SECRET_PASSCODE) {
+                // Passcode Successful!
+                passcodeError.style.display = 'none';
+                
+                // Hide lock UI
+                lockedMsg.style.display = 'none';
+                
+                // Unblur images
+                actualGallery.classList.add('unlocked');
+                const images = actualGallery.querySelectorAll('.gallery-img');
+                images.forEach(img => img.classList.remove('blur-img'));
+                
+            } else {
+                // Passcode Failed
+                passcodeError.style.display = 'block';
+                passcodeInput.value = '';
+                
+                // Shake animation for error
+                passcodeInput.parentElement.animate([
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(-10px)' },
+                    { transform: 'translateX(10px)' },
+                    { transform: 'translateX(-10px)' },
+                    { transform: 'translateX(10px)' },
+                    { transform: 'translateX(0)' }
+                ], { duration: 400 });
+            }
+        });
+        
+        // Allow pressing Enter in passcode input
+        passcodeInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') unlockBtn.click();
+        });
+    }
+
+    if (!modal || !openBtn || !closeBtn) return;
+
+    // Open modal
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent background scrolling
+    });
+
+    // Close modal via button
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close modal when clicking outside form
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }

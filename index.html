@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bishal Khadka | Portfolio</title>
     <meta name="description" content="Portfolio of Bishal Khadka, Full Stack Developer and System Administrator.">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Three.js Canvas Container -->
     <div id="canvas-container"></div>
 
@@ -23,7 +34,7 @@
     <nav id="navbar">
         <div class="nav-content">
             <a href="#hero" class="logo">BK</a>
-            
+
             <div class="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -35,17 +46,20 @@
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#experience">EXPERIENCE</a></li>
                 <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
     </nav>
-
+    
     <!-- Hero Section -->
     <section id="hero" class="section">
         <div class="hero-content">
             <div class="hero-text">
                 <h1 id="hero-title">
-                    <span class="title-word">BISHAL</span> 
+                    <span class="title-word">BISHAL</span>
                     <span class="title-word">KHADKA</span>
                 </h1>
                 <div class="subtitle-container">
@@ -56,7 +70,8 @@
                 <p class="tagline">Crafting Digital Solutions with Precision & Innovation</p>
                 <div class="cta-buttons">
                     <a href="#experience" class="btn primary-btn">Explore My Work</a>
-                    <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+                    <a href="assets/resume.pdf" class="btn secondary-btn" download><i class="fas fa-download"
+                            style="margin-right: 8px;"></i> Download CV</a>
                 </div>
             </div>
             <div class="hero-image-container flip-container">
@@ -70,7 +85,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="scroll-indicator">
             <span>Scroll to explore</span>
             <i class="fas fa-chevron-down animate-bounce"></i>
@@ -81,7 +96,7 @@
     <section id="about" class="section">
         <div class="section-container">
             <h2 class="section-title">About Me</h2>
-            
+
             <div class="about-grid">
                 <div class="about-card scroll-animate fade-left">
                     <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
@@ -89,14 +104,14 @@
                     <p><strong>BCA Student</strong></p>
                     <p>Himalayan College for Learning and Excellence</p>
                 </div>
-                
+
                 <div class="about-card scroll-animate fade-up">
                     <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <h3>Location</h3>
                     <p>Rampur, Udaypur</p>
                     <p>Belakha Municipality, Ward No. 3, Nayatole, Nepal</p>
                 </div>
-                
+
                 <div class="about-card scroll-animate fade-right">
                     <div class="card-icon"><i class="fas fa-briefcase"></i></div>
                     <h3>Recent Role</h3>
@@ -104,7 +119,7 @@
                     <p>MSM VIDEO</p>
                 </div>
             </div>
-            
+
             <div class="bio-section scroll-animate fade-up">
                 <div class="bio-header">
                     <i class="fas fa-route bio-icon"></i>
@@ -112,10 +127,16 @@
                 </div>
                 <div class="bio-content">
                     <p class="lead-text">
-                        I am a passionate tech professional with a diverse background ranging from <span class="highlight">Level 2 Technical Support</span> to <span class="highlight">System Administration</span> and <span class="highlight">Full Stack Development</span>.
+                        I am a passionate tech professional with a diverse background ranging from <span
+                            class="highlight">Level 2 Technical Support</span> to <span class="highlight">System
+                            Administration</span> and <span class="highlight">Full Stack Development</span>.
                     </p>
                     <p>
-                        My journey from resolving advanced network connectivity issues at Dishhome Fibernet to managing robust server infrastructures at MSM VIDEO has equipped me with a unique perspective on system architecture and user experience. Currently pursuing my Bachelor of Computer Applications, I am dedicated to learning cutting-edge technologies and continuously evolving my developer toolset to create innovative digital solutions.
+                        My journey from resolving advanced network connectivity issues at Dishhome Fibernet to managing
+                        robust server infrastructures at MSM VIDEO has equipped me with a unique perspective on system
+                        architecture and user experience. Currently pursuing my Bachelor of Computer Applications, I am
+                        dedicated to learning cutting-edge technologies and continuously evolving my developer toolset
+                        to create innovative digital solutions.
                     </p>
                 </div>
             </div>
@@ -126,7 +147,7 @@
     <section id="experience" class="section">
         <div class="section-container">
             <h2 class="section-title">Professional Experience</h2>
-            
+
             <div class="timeline">
                 <div class="timeline-item scroll-animate slide-in-left">
                     <div class="timeline-dot"></div>
@@ -137,12 +158,16 @@
                             MSM Video
                         </h4>
                         <ul>
-                            <li>Managed and deployed scalable cloud infrastructure using AWS services (EC2, S3, CloudFront, IAM)</li>
-                            <li>Implemented and maintained DRM (Digital Rights Management) for secure video content delivery</li>
+                            <li>Managed and deployed scalable cloud infrastructure using AWS services</li>
+                            <li>Implemented and maintained DRM (Digital Rights Management) for secure video content
+                                delivery</li>
                             <li>Configured CDN (Content Delivery Network) for low-latency global video streaming</li>
-                            <li>Integrated and optimized web-based video players (adaptive bitrate streaming, HLS/DASH)</li>
-                            <li>Handled bulk email systems for user notifications, campaigns, and transactional emails</li>
-                            <li>Monitored system performance, uptime, and streaming quality using cloud monitoring tools</li>
+                            <li>Integrated and optimized web-based video players (adaptive bitrate streaming, HLS/DASH)
+                            </li>
+                            <li>Handled bulk email systems for user notifications, campaigns, and transactional emails
+                            </li>
+                            <li>Monitored system performance, uptime, and streaming quality using cloud monitoring tools
+                            </li>
                             <li>Automated deployment workflows and improved system reliability</li>
                             <li>Collaborated with development teams to enhance platform scalability and security</li>
                         </ul>
@@ -157,19 +182,23 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item scroll-animate slide-in-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Network Support & Configuration Engineer</h3>
                         <h4 class="company-title">
-                            <img src="assets/images/dishhome-logo.png" alt="DishHome Fibernet Logo" class="company-logo">
+                            <img src="assets/images/dishhome-logo.png" alt="DishHome Fibernet Logo"
+                                class="company-logo">
                             Dish Home FiberNet
                         </h4>
                         <ul>
-                            <li>Configured and maintained routing and switching in enterprise and ISP-level environments</li>
-                            <li>Performed port forwarding, NAT configuration, and firewall setup for customer networks</li>
-                            <li>Installed and configured fiber internet services (FTTH) for residential and business clients</li>
+                            <li>Configured and maintained routing and switching in enterprise and ISP-level environments
+                            </li>
+                            <li>Performed port forwarding, NAT configuration, and firewall setup for customer networks
+                            </li>
+                            <li>Installed and configured fiber internet services (FTTH) for residential and business
+                                clients</li>
                             <li>Provided dedicated service support and rapid troubleshooting for network issues</li>
                             <li>Monitored network performance, uptime, and bandwidth utilization</li>
                             <li>Diagnosed and resolved connectivity, latency, and packet loss issues</li>
@@ -190,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item scroll-animate slide-in-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -200,15 +229,18 @@
                             Classic Tech Pvt. Ltd.
                         </h4>
                         <ul>
-                            <li>Provided first-level technical support to customers via chat, email, and ticketing systems</li>
-                            <li>Handled customer queries, complaints, and service requests with a professional approach</li>
+                            <li>Provided first-level technical support to customers via chat, email, and ticketing
+                                systems</li>
+                            <li>Handled customer queries, complaints, and service requests with a professional approach
+                            </li>
                             <li>Performed troubleshooting of internet, networking, and connectivity issues</li>
                             <li>Coordinated with NOC (Network Operations Center) for backend issue resolution</li>
                             <li>Collaborated with field technicians to ensure on-site problem resolution</li>
                             <li>Monitored and followed up on open tickets to ensure timely closure</li>
                             <li>Assisted in router configuration, basic networking setup, and service activation</li>
                             <li>Maintained proper communication flow and documentation of issues and solutions</li>
-                            <li>Ensured high customer satisfaction through effective problem-solving and communication</li>
+                            <li>Ensured high customer satisfaction through effective problem-solving and communication
+                            </li>
                             <li>Escalated complex issues to higher-level support teams when necessary</li>
                         </ul>
                         <div class="job-skills">
@@ -244,7 +276,7 @@
     <section id="skills" class="section">
         <div class="section-container">
             <h2 class="section-title">Technical Skills</h2>
-            
+
             <div class="skills-grid">
                 <div class="skill-category scroll-animate fade-up">
                     <div class="skill-icon"><i class="fas fa-code"></i></div>
@@ -257,7 +289,7 @@
                         <span>Node.js</span>
                     </div>
                 </div>
-                
+
                 <div class="skill-category scroll-animate fade-up" style="transition-delay: 100ms;">
                     <div class="skill-icon"><i class="fas fa-server"></i></div>
                     <h3>Backend & Databases</h3>
@@ -269,7 +301,7 @@
                         <span>Python</span>
                     </div>
                 </div>
-                
+
                 <div class="skill-category scroll-animate fade-up" style="transition-delay: 200ms;">
                     <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
                     <h3>System & Network</h3>
@@ -281,7 +313,7 @@
                         <span>System Admin</span>
                     </div>
                 </div>
-                
+
                 <div class="skill-category scroll-animate fade-up" style="transition-delay: 300ms;">
                     <div class="skill-icon"><i class="fas fa-tools"></i></div>
                     <h3>DevOps & Tools</h3>
@@ -293,7 +325,7 @@
                         <span>AWS Basics</span>
                     </div>
                 </div>
-                
+
                 <div class="skill-category scroll-animate fade-up" style="transition-delay: 400ms;">
                     <div class="skill-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Soft Skills</h3>
@@ -308,12 +340,198 @@
             </div>
         </div>
     </section>
+    <!-- CV Section -->
+    <section id="cv" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Curriculum Vitae</h2>
+            
+            <div class="cv-container scroll-animate fade-up">
+                <div class="cv-header">
+                    <h3>Interactive Resume</h3>
+                    <div class="cv-actions">
+                        <a href="assets/resume.pdf" class="btn primary-btn" download>
+                            <i class="fas fa-download" style="margin-right: 8px;"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cv-embed-wrapper">
+                    <!-- The object tag renders the PDF natively in modern browsers -->
+                    <object data="assets/resume.pdf" type="application/pdf" width="100%" height="800px" style="border: none; border-radius: 8px;">
+                        <div class="cv-fallback">
+                            <i class="fas fa-file-pdf" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                            <p>CV document is missing or not supported by your browser.</p>
+                            <p style="font-size: 0.9rem; margin-bottom: 20px;">Please put your resume file at <strong>assets/resume.pdf</strong></p>
+                            <a href="assets/resume.pdf" class="btn secondary-btn" download>Download Directly Instead</a>
+                        </div>
+                    </object>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="projects-grid">
+                <!-- Project 1: Cloud Stream -->
+                <div class="project-card scroll-animate fade-up">
+                    <div class="project-img-container">
+                        <div class="project-img-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" class="project-link-btn"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4628c9759?q=80&w=800&auto=format&fit=crop"
+                            alt="Cloud Stream Engine" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Cloud Infrastructure</span>
+                        <h3>Cloud Stream Engine</h3>
+                        <p>A high-performance video streaming architecture built on AWS, featuring edge delivery and
+                            adaptive bitrate streaming for global reach.</p>
+                        <div class="project-tech">
+                            <span>AWS EC2</span>
+                            <span>S3</span>
+                            <span>CloudFront</span>
+                            <span>HLS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: NetPulse -->
+                <div class="project-card scroll-animate fade-up" style="transition-delay: 150ms;">
+                    <div class="project-img-container">
+                        <div class="project-img-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" class="project-link-btn"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop"
+                            alt="NetPulse Monitor" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Networking Tool</span>
+                        <h3>NetPulse Monitor</h3>
+                        <p>Advanced real-time network monitoring dashboard with predictive downtime analysis and
+                            automated topology discovery.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>SNMP</span>
+                            <span>React</span>
+                            <span>WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Cyber Portfolio -->
+                <div class="project-card scroll-animate fade-up" style="transition-delay: 300ms;">
+                    <div class="project-img-container">
+                        <div class="project-img-overlay">
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link-btn"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank" class="project-link-btn"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop"
+                            alt="Cyber Portfolio" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Web Development</span>
+                        <h3>Neural Portfolio</h3>
+                        <p>A futuristic personal identity platform using Three.js and custom GLSL shaders for an
+                            immersive creative developer experience.</p>
+                        <div class="project-tech">
+                            <span>Three.js</span>
+                            <span>GLSL</span>
+                            <span>JavaScript</span>
+                            <span>GSAP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Private) -->
+    <section id="gallery" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Personal Gallery</h2>
+            <div class="locked-gallery-container scroll-animate fade-up">
+                <div class="locked-overlay" id="galleryLockedMsg">
+                    <i class="fas fa-lock lock-icon" id="lockIconStatus"></i>
+                    <h3 id="lockTitleStatus">Private Collection</h3>
+                    <p id="lockDescStatus">This section contains personal photos and memories. Access is restricted.</p>
+                    
+                    <div id="unlockSection" style="margin-top: 1.5rem;">
+                        <div class="input-group" style="display:flex; max-width:300px; margin: 0 auto 10px;">
+                            <input type="password" id="passcodeInput" placeholder="Enter Passcode..." style="border-radius: 4px 0 0 4px;">
+                            <button id="unlockBtn" class="btn primary-btn" style="border-radius: 0 4px 4px 0; padding: 12px 15px;">Unlock</button>
+                        </div>
+                        <p id="passcodeError" style="color:#ff007f; font-size:0.8rem; display:none;">Incorrect passcode</p>
+                        <p style="margin-top:20px; font-size:0.9rem;">Don't have a passcode?</p>
+                        <button id="requestAccessBtn" class="btn secondary-btn">
+                            <i class="fas fa-key" style="margin-right: 8px;"></i> Request Access
+                        </button>
+                    </div>
+                </div>
+                <!-- Actual gallery images (blurred by default) -->
+                <div class="gallery-grid" id="actualGallery">
+                    <img src="assets/images/gallery/photo1.jpg" alt="Gallery Photo 1" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo2.jpg" alt="Gallery Photo 2" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo3.jpg" alt="Gallery Photo 3" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo4.jpg" alt="Gallery Photo 4" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo5.jpg" alt="Gallery Photo 5" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo6.jpg" alt="Gallery Photo 6" class="gallery-img blur-img">
+                    <img src="assets/images/gallery/photo7.jpg" alt="Gallery Photo 7" class="gallery-img blur-img">
+                </div>
+        </div>
+    </section>
+
+    <!-- Access Request Modal -->
+    <div id="accessModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <i class="fas fa-shield-alt modal-icon"></i>
+            <h3>Request Gallery Access</h3>
+            <p>Please enter your Gmail and name to request permission to view the gallery.</p>
+            <form id="accessForm" action="https://formsubmit.co/bishalwork10@gmail.com" method="POST">
+                <!-- FormSubmit config -->
+                <input type="hidden" name="_subject" value="[Action Required] Gallery Access Request">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_next" value="https://beshal77.github.io/bishal-khadka.github.io/#gallery">
+
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Your Gmail Address" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="reason" placeholder="Reason for access (optional)" rows="2"></textarea>
+                </div>
+                
+                <button type="submit" class="btn primary-btn submit-btn" style="width: 100%;">
+                    <span>Submit Request</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="section-container">
             <h2 class="section-title">Get In Touch</h2>
-            
+
             <div class="contact-content">
                 <div class="contact-cards">
                     <div class="contact-card scroll-animate fade-right">
@@ -321,20 +539,20 @@
                         <h3>Email</h3>
                         <a href="mailto:bishalwork10@gmail.com">bishalwork10@gmail.com</a>
                     </div>
-                    
+
                     <div class="contact-card scroll-animate fade-right" style="transition-delay: 100ms;">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3>Address</h3>
                         <p>Rampur, Udaypur, Belakha Municipality, Ward No. 3, Nepal</p>
                     </div>
-                    
+
                     <div class="contact-card scroll-animate fade-right" style="transition-delay: 200ms;">
                         <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                         <h3>Connect</h3>
-                        <p>Let's collaborate on projects</p>
+                        <p>9823550000</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-form-container scroll-animate fade-left">
                     <form id="contactForm" action="https://formsubmit.co/bishalwork10@gmail.com" method="POST">
                         <div class="input-group">
@@ -344,14 +562,15 @@
                             <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="input-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5"
+                                required></textarea>
                         </div>
-                        
+
                         <!-- Hidden fields for FormSubmit -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="New Portfolio Contact!">
                         <input type="hidden" name="_template" value="table">
-                        
+
                         <button type="submit" class="btn primary-btn submit-btn">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
@@ -364,18 +583,28 @@
         </div>
     </section>
 
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">BK.</div>
-            
+
             <div class="social-links scroll-animate fade-up">
-                <a href="https://www.facebook.com/bishal.khadka.228565" target="_blank" aria-label="Facebook" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="GitHub" class="social-btn github"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/bishal-khadka-50a784239/" target="_blank" aria-label="LinkedIn" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/bishal.khadka.228565" target="_blank" aria-label="Facebook"
+                    class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/beshal77" target="_blank" aria-label="GitHub" class="social-btn github"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/bishal-khadka-50a784239/" target="_blank" aria-label="LinkedIn"
+                    class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" aria-label="Twitter" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/bishalkhadka107?igsh=OWh2amQ4b2N6aXk4" target="_blank" aria-label="Instagram" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@PawarTalks10" target="_blank" aria-label="YouTube" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/bishalkhadka107?igsh=OWh2amQ4b2N6aXk4" target="_blank"
+                    aria-label="Instagram" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@PawarTalks10" target="_blank" aria-label="YouTube"
+                    class="social-btn youtube"><i class="fab fa-youtube"></i></a>
             </div>
 
             <p>&copy; 2026 Bishal Khadka — Designed &amp; Developed with precision.</p>
@@ -384,8 +613,9 @@
 
     <!-- Three.js (cdn) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
+
     <!-- Custom Scripts -->
     <script src="script.js"></script>
 </body>
+
 </html>
