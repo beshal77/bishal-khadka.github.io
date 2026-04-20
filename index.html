@@ -353,16 +353,24 @@
                     </div>
                 </div>
                 
-                <div class="cv-embed-wrapper">
-                    <!-- The object tag renders the PDF natively in modern browsers -->
-                    <object data="assets/resume.pdf" type="application/pdf" width="100%" height="800px" style="border: none; border-radius: 8px;">
-                        <div class="cv-fallback">
-                            <i class="fas fa-file-pdf" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
-                            <p>CV document is missing or not supported by your browser.</p>
-                            <p style="font-size: 0.9rem; margin-bottom: 20px;">Please put your resume file at <strong>assets/resume.pdf</strong></p>
-                            <a href="assets/resume.pdf" class="btn secondary-btn" download>Download Directly Instead</a>
+                <div class="cv-embed-wrapper" style="display: flex; align-items: center; justify-content: center; min-height: 400px; position: relative; overflow: hidden; border-radius: 8px;">
+                    <!-- A beautifully integrated premium UI background instead of a broken PDF viewer -->
+                    <div style="position: absolute; top: -50px; left: -50px; right: -50px; bottom: -50px; background: radial-gradient(circle at center, rgba(11, 244, 200, 0.15) 0%, transparent 60%);"></div>
+                    
+                    <div style="position: relative; z-index: 2; text-align: center; color: #fff; padding: 50px 30px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(11,244,200, 0.15); border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); max-width: 600px; margin: 0 auto; width: 90%;">
+                        
+                        <div style="font-size: 60px; margin-bottom: 20px; color: #0bf4c8; filter: drop-shadow(0 0 15px rgba(11,244,200,0.5));">
+                            <i class="fas fa-file-contract"></i>
                         </div>
-                    </object>
+                        
+                        <h3 style="font-size: 26px; margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; background: linear-gradient(to right, #fff, #0bf4c8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">PREMIUM DIGITAL CV</h3>
+                        
+                        <p style="color: #94a3b8; margin-bottom: 30px; font-weight: 300; line-height: 1.6; font-size: 1.05rem;">
+                            <span style="display: block; margin-bottom: 15px; font-style: italic; color: #e2e8f0;">"🚀 Built with passion, powered by skills, and driven by results 💡"</span>
+                            Your browser doesn't need to load a static document. Use the <strong>Download PDF</strong> button above to securely generate a high-fidelity, uniquely formatted copy of my professional resume directly onto your device.
+                        </p>
+                        
+                    </div>
                 </div>
             </div>
         </div>
