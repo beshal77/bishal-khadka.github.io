@@ -487,6 +487,13 @@
                     <img src="assets/images/gallery/personal4.jpg" alt="Portrait Sketch" class="gallery-img blur-img">
                     <img src="assets/images/gallery/personal5.jpg" alt="Bench in the Woods" class="gallery-img blur-img">
                 </div>
+                
+                <!-- Exit / Lock Button (Visible when unlocked) -->
+                <div id="lockGalleryBtnContainer" style="display: none; text-align: center; margin-top: 30px;">
+                    <button id="lockGalleryBtn" class="btn secondary-btn" style="padding: 10px 25px;">
+                        <i class="fas fa-lock" style="margin-right: 8px;"></i> Lock Gallery
+                    </button>
+                </div>
             </div> <!-- Important: Added missing closing div for locked-gallery-container -->
         </div>
     </section>
@@ -709,6 +716,8 @@
             const passcodeError = document.getElementById('passcodeError');
             const lockedMsg = document.getElementById('galleryLockedMsg');
             const actualGallery = document.getElementById('actualGallery');
+            const lockBtnContainer = document.getElementById('lockGalleryBtnContainer');
+            const lockGalleryBtn = document.getElementById('lockGalleryBtn');
 
             function unlock() {
                 if (lockedMsg) lockedMsg.style.display = 'none';
@@ -720,7 +729,23 @@
                         img.style.opacity = '1';
                     });
                 }
+                if (lockBtnContainer) lockBtnContainer.style.display = 'block';
                 localStorage.setItem('galleryAccess', 'true');
+            }
+
+            function lock() {
+                if (lockedMsg) lockedMsg.style.display = 'block';
+                if (actualGallery) {
+                    actualGallery.classList.remove('unlocked');
+                    actualGallery.querySelectorAll('.gallery-img').forEach(img => {
+                        img.classList.add('blur-img');
+                        img.style.filter = '';
+                        img.style.opacity = '';
+                    });
+                }
+                if (lockBtnContainer) lockBtnContainer.style.display = 'none';
+                if (passcodeInput) passcodeInput.value = '';
+                localStorage.removeItem('galleryAccess');
             }
 
             // Auto-unlock if previously accessed
@@ -741,6 +766,10 @@
                 passcodeInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') unlockBtn.click();
                 });
+            }
+
+            if (lockGalleryBtn) {
+                lockGalleryBtn.addEventListener('click', lock);
             }
         });
     </script>
